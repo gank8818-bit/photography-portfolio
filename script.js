@@ -26,24 +26,45 @@
   /* ---------------- Preloader ---------------- */
   const preloader = $("#preloader");
   const preCount = $("#preCount");
-  let pc = 0;
+  let pc = 0, dismissed = false;
+  const dismiss = () => { if (!dismissed) { dismissed = true; preloader && preloader.classList.add("done"); } };
+  const playHero = () => $$(".hero__title .line").forEach((l, i) =>
+    setTimeout(() => l.classList.add("in"), 150 + i * 120));
   const tick = setInterval(() => {
     pc = Math.min(100, pc + Math.floor(Math.random() * 16) + 6);
     if (preCount) preCount.textContent = String(pc).padStart(2, "0");
-    if (pc >= 100) clearInterval(tick);
-  }, 90);
-  window.addEventListener("load", () => {
-    setTimeout(() => preloader && preloader.classList.add("done"), 600);
-    // kick hero line animation
-    $$(".hero__title .line").forEach((l, i) =>
-      setTimeout(() => l.classList.add("in"), 700 + i * 120)
-    );
-  });
-  // safety: never let preloader trap the page
-  setTimeout(() => preloader && preloader.classList.add("done"), 3500);
+    if (pc >= 100) { clearInterval(tick); setTimeout(() => { dismiss(); playHero(); }, 250); }
+  }, 80);
+  window.addEventListener("load", () => { dismiss(); playHero(); });
+  if (document.readyState === "complete") { dismiss(); playHero(); }
+  // hard safety: never let the loader linger/spin regardless of resource load time
+  setTimeout(() => { dismiss(); playHero(); }, 2200);
 
   /* ---------------- Year ---------------- */
   $("#year").textContent = new Date().getFullYear();
+
+  /* ---------------- Marquee (seamless, responsive) ---------------- */
+  (function buildMarquee() {
+    const track = $(".marquee__track");
+    if (!track) return;
+    const words = ["Landscape", "Architecture", "Street", "Travel", "Night", "Nature"];
+    const unit = words.map((w) => `<span>${w}</span><span>•</span>`).join("");
+    function fill() {
+      // 1) repeat the unit until ONE group comfortably exceeds the viewport
+      track.style.animation = "none";
+      track.innerHTML = unit;
+      let guard = 0;
+      while (track.scrollWidth < window.innerWidth + 120 && guard++ < 40) track.innerHTML += unit;
+      // 2) duplicate the group → two identical halves, so translateX(-50%) loops with no gap
+      track.innerHTML += track.innerHTML;
+      void track.offsetWidth; // force reflow so the animation restarts cleanly
+      const half = track.scrollWidth / 2;
+      track.style.animation = `marq ${Math.max(18, Math.round(half / 70))}s linear infinite`;
+    }
+    fill();
+    let rt;
+    window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(fill, 200); }, { passive: true });
+  })();
 
   /* ---------------- Nav scroll + progress ---------------- */
   const nav = $("#nav");
