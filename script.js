@@ -10,6 +10,10 @@
   const PHOTO_DIR = "assets/photos/";
   const THUMB_DIR = "assets/thumbs/";
 
+  // Progressive enhancement flag: CSS only hides content for reveal animations
+  // when this class is present, so a JS hiccup can never leave the page blank.
+  document.documentElement.classList.add("js");
+
   /* ---------------- Logo injection ---------------- */
   const LOGO_SVG = `
     <svg viewBox="0 0 120 120" aria-hidden="true">
@@ -43,27 +47,30 @@
   /* ---------------- Year ---------------- */
   $("#year").textContent = new Date().getFullYear();
 
-  /* ---------------- Marquee (seamless, responsive) ---------------- */
+  /* ---------------- Marquee (seamless, responsive) ----------------
+     We only ever rewrite the track's CONTENT, never its `animation`
+     property — so the continuous CSS animation (declared once in
+     styles.css) keeps running smoothly and never restarts/lurches.
+     We repeat the words until one half is wider than the viewport,
+     then duplicate that half so translateX(-50%) loops with no gap. */
   (function buildMarquee() {
     const track = $(".marquee__track");
     if (!track) return;
     const words = ["Landscape", "Architecture", "Street", "Travel", "Night", "Nature"];
     const unit = words.map((w) => `<span>${w}</span><span>•</span>`).join("");
+    let lastW = -1;
     function fill() {
-      // 1) repeat the unit until ONE group comfortably exceeds the viewport
-      track.style.animation = "none";
+      const vw = window.innerWidth;
+      if (Math.abs(vw - lastW) < 60) return; // ignore tiny/no-op resizes (mobile URL bar etc.)
+      lastW = vw;
       track.innerHTML = unit;
       let guard = 0;
-      while (track.scrollWidth < window.innerWidth + 120 && guard++ < 40) track.innerHTML += unit;
-      // 2) duplicate the group → two identical halves, so translateX(-50%) loops with no gap
-      track.innerHTML += track.innerHTML;
-      void track.offsetWidth; // force reflow so the animation restarts cleanly
-      const half = track.scrollWidth / 2;
-      track.style.animation = `marq ${Math.max(18, Math.round(half / 70))}s linear infinite`;
+      while (track.scrollWidth < vw + 120 && guard++ < 40) track.innerHTML += unit;
+      track.innerHTML += track.innerHTML; // two identical halves → seamless -50% loop
     }
     fill();
     let rt;
-    window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(fill, 200); }, { passive: true });
+    window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(fill, 250); }, { passive: true });
   })();
 
   /* ---------------- Nav scroll + progress ---------------- */
@@ -233,6 +240,9 @@
       { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
     );
     $$(".card").forEach((c) => cardObserver.observe(c));
+    // Safety net: if IntersectionObserver never fires (edge browsers, fast
+    // scroll, restored scroll position), reveal everything so nothing stays blank.
+    setTimeout(() => $$(".card").forEach((c) => c.classList.add("in")), 1500);
   }
 
   function setFilter(cat, btn) {
@@ -243,10 +253,13 @@
       card.style.display = show ? "" : "none";
       if (show) { card.classList.remove("in"); }
     });
-    // re-trigger reveal for visible
+    // re-trigger reveal for visible cards, with a safety net so they always show
     requestAnimationFrame(() =>
       $$(".card").forEach((c) => { if (c.style.display !== "none") cardObserver.observe(c); })
     );
+    setTimeout(() => $$(".card").forEach((c) => {
+      if (c.style.display !== "none") c.classList.add("in");
+    }), 700);
   }
 
   renderGallery();
@@ -281,10 +294,13 @@
   function showPhoto(idx) {
     const p = PHOTOS[idx];
     if (!p) return;
-    lbImg.style.opacity = 0;
-    const pre = new Image();
-    pre.onload = () => { lbImg.src = pre.src; lbImg.style.opacity = 1; };
-    pre.src = PHOTO_DIR + p.file;
+    // Show the already-cached thumbnail immediately so the viewer is never blank,
+    // then swap in the full-resolution image once it has finished loading.
+    lbImg.src = THUMB_DIR + p.file;
+    lbImg.style.opacity = 1;
+    const full = new Image();
+    full.onload = () => { if (current === idx) lbImg.src = full.src; };
+    full.src = PHOTO_DIR + p.file;
     lbImg.alt = `${p.title} — ${p.category}`;
     lbTitle.textContent = p.title;
     lbBlurb.textContent = p.blurb;
