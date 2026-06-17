@@ -235,7 +235,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .marquee{border-block:1px solid var(--line);overflow:hidden;background:var(--bg-2)}
 .marquee__track{display:flex;gap:34px;align-items:center;padding:18px 0;white-space:nowrap;
   font-family:var(--font-display);font-size:1.5rem;font-style:italic;color:var(--text-dim);
-  width:max-content;animation:marq 60s linear infinite;will-change:transform}
+  width:max-content;animation:marq 600s linear infinite;will-change:transform}
 .marquee__track span:nth-child(even){color:var(--accent)}
 @keyframes marq{to{transform:translateX(-50%)}}
 
