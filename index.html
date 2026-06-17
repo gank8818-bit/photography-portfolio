@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="noir">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiros Gan — Photography Portfolio</title>
+  <meta name="description" content="Kiros Gan — photographer. Landscapes, architecture, street and travel photography. A curated portfolio of selected work." />
+  <meta name="author" content="Kiros Gan" />
+  <meta property="og:title" content="Kiros Gan — Photography" />
+  <meta property="og:description" content="A curated portfolio of landscape, architecture, street and travel photography." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/photos/06-prismatic.jpg" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <svg class="preloader__mark" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="44" fill="none" stroke="currentColor" stroke-width="3"/>
+        <circle cx="60" cy="60" r="15" fill="none" stroke="currentColor" stroke-width="3"/>
+      </svg>
+      <span class="preloader__count" id="preCount">00</span>
+    </div>
+  </div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a href="#home" class="brand" aria-label="Kiros Gan — home">
+      <span class="brand__logo" id="brandLogo"></span>
+      <span class="brand__text">Kiros<span class="brand__dot">.</span>Gan</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#work" class="nav__link">Work</a>
+      <a href="#about" class="nav__link">About</a>
+      <a href="#contact" class="nav__link">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="theme-btn" id="themeBtn" aria-haspopup="true" aria-expanded="false" aria-label="Change colour theme">
+        <span class="theme-btn__swatch"></span>
+        <span class="theme-btn__label">Theme</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Theme panel -->
+  <div class="theme-panel" id="themePanel" role="dialog" aria-label="Colour theme picker" aria-hidden="true">
+    <div class="theme-panel__head">
+      <h4>Colour theme</h4>
+      <p>Pick a mood. Your choice is remembered.</p>
+    </div>
+    <div class="theme-panel__group" id="themeRecentWrap" hidden>
+      <span class="theme-panel__label">Recent</span>
+      <div class="theme-swatches" id="themeRecent"></div>
+    </div>
+    <div class="theme-panel__group">
+      <span class="theme-panel__label">All themes</span>
+      <div class="theme-swatches" id="themeAll"></div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero__bg" id="heroBg" aria-hidden="true"></div>
+      <div class="hero__veil" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <p class="hero__eyebrow reveal">Photographer · Visual storyteller</p>
+        <h1 class="hero__title">
+          <span class="line reveal"><span>Chasing</span></span>
+          <span class="line reveal"><span><em>light</em> &amp; line</span></span>
+          <span class="line reveal"><span>across the world.</span></span>
+        </h1>
+        <p class="hero__sub reveal">A curated selection of landscape, architecture, street and travel
+          photography — moments where geometry, colour and timing line up.</p>
+        <div class="hero__cta reveal">
+          <a href="#work" class="btn btn--primary">View the gallery</a>
+          <a href="#contact" class="btn btn--ghost">Work with me</a>
+        </div>
+      </div>
+      <div class="hero__scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+      <div class="hero__stats reveal">
+        <div><strong data-count="20">0</strong><span>Selected works</span></div>
+        <div><strong data-count="8">0</strong><span>Countries &amp; cities</span></div>
+        <div><strong data-count="6">0</strong><span>Genres</span></div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Landscape</span><span>•</span><span>Architecture</span><span>•</span><span>Street</span><span>•</span>
+        <span>Travel</span><span>•</span><span>Night</span><span>•</span><span>Nature</span><span>•</span>
+        <span>Landscape</span><span>•</span><span>Architecture</span><span>•</span><span>Street</span><span>•</span>
+        <span>Travel</span><span>•</span><span>Night</span><span>•</span><span>Nature</span><span>•</span>
+      </div>
+    </div>
+
+    <!-- WORK / GALLERY -->
+    <section class="work" id="work">
+      <div class="section-head">
+        <div>
+          <p class="section-head__eyebrow reveal">Selected work</p>
+          <h2 class="section-head__title reveal">The Gallery</h2>
+        </div>
+        <p class="section-head__note reveal">Click any frame to view it full-size. Filter by genre below.</p>
+      </div>
+
+      <div class="filters" id="filters" role="tablist" aria-label="Filter gallery by genre"></div>
+
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="about__media reveal">
+        <div class="about__img" id="aboutImg"></div>
+        <div class="about__badge">
+          <span>Est.</span><strong>2024</strong>
+        </div>
+      </div>
+      <div class="about__body">
+        <p class="section-head__eyebrow reveal">About</p>
+        <h2 class="about__title reveal">I photograph the<br/>places light forgets<br/>to leave alone.</h2>
+        <p class="reveal">I'm <strong>Kiros Gan</strong>, a photographer drawn to strong geometry, decisive
+          colour and quiet human moments inside enormous spaces. From the thermal blues of Yellowstone
+          to vermilion temple eaves and rain-slick streets at night, every frame here was scouted,
+          shot and edited by hand.</p>
+        <p class="reveal">My approach is simple: wait for the light, find the line, and press the shutter
+          at the exact second the scene resolves. The result is a portfolio that values patience over
+          spectacle — though there's plenty of spectacle too.</p>
+        <ul class="about__list reveal">
+          <li><span>01</span> Landscape &amp; nature</li>
+          <li><span>02</span> Architecture &amp; geometry</li>
+          <li><span>03</span> Street &amp; travel</li>
+          <li><span>04</span> Night &amp; long exposure</li>
+        </ul>
+        <a href="#contact" class="btn btn--primary reveal">Let's create something</a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="contact__head">
+        <p class="section-head__eyebrow reveal">Contact</p>
+        <h2 class="contact__title reveal">Have a project, a print<br/>request, or just a hello?</h2>
+        <p class="reveal contact__lead">Prints, commissions, collaborations and licensing — drop a note and
+          I'll get back to you. Fill in the form, or reach me directly.</p>
+        <div class="contact__direct reveal">
+          <a href="mailto:gank8818@gmail.com" class="contact__chip">✉ gank8818@gmail.com</a>
+          <a href="#" class="contact__chip" id="instaChip">◎ @kiros.frames</a>
+          <a href="#" class="contact__chip" id="px500Chip">▢ 500px / Kiros Gan</a>
+        </div>
+      </div>
+
+      <form class="contact__form reveal" id="contactForm" novalidate>
+        <div class="field">
+          <input type="text" id="cf-name" name="name" required placeholder=" " />
+          <label for="cf-name">Your name</label>
+          <span class="field__error" data-for="cf-name"></span>
+        </div>
+        <div class="field">
+          <input type="email" id="cf-email" name="email" required placeholder=" " />
+          <label for="cf-email">Email address</label>
+          <span class="field__error" data-for="cf-email"></span>
+        </div>
+        <div class="field">
+          <select id="cf-topic" name="topic">
+            <option value="Print order">Print order</option>
+            <option value="Commission / shoot">Commission / shoot</option>
+            <option value="Licensing">Licensing</option>
+            <option value="Just saying hi">Just saying hi</option>
+          </select>
+          <label for="cf-topic" class="field__label--static">What's this about?</label>
+        </div>
+        <div class="field field--full">
+          <textarea id="cf-msg" name="message" rows="4" required placeholder=" "></textarea>
+          <label for="cf-msg">Your message</label>
+          <span class="field__error" data-for="cf-msg"></span>
+        </div>
+        <button type="submit" class="btn btn--primary btn--block">Send message</button>
+        <p class="contact__status" id="contactStatus" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__top">
+      <a href="#home" class="brand brand--footer">
+        <span class="brand__logo" id="brandLogoFooter"></span>
+        <span class="brand__text">Kiros<span class="brand__dot">.</span>Gan</span>
+      </a>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#home">Back to top ↑</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">
+        © <span id="year"></span> Kiros Gan. All photographs are original works and are protected by copyright.
+        No image may be reproduced, downloaded or used without written permission.
+      </p>
+      <p class="footer__credit">Designed &amp; built with care · <span id="themeName">Noir</span> theme</p>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <button class="lightbox__close" id="lbClose" aria-label="Close">✕</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Previous image">‹</button>
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Next image">›</button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" id="lbImg" alt="" />
+      <figcaption class="lightbox__caption">
+        <div class="lightbox__meta">
+          <h3 id="lbTitle"></h3>
+          <p id="lbBlurb"></p>
+        </div>
+        <div class="lightbox__tags">
+          <span id="lbCat"></span>
+          <span id="lbLoc"></span>
+          <span id="lbYear"></span>
+          <span id="lbIndex"></span>
+        </div>
+      </figcaption>
+    </figure>
+  </div>
+
+  <script src="assets/data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

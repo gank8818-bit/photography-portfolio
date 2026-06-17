@@ -1,0 +1,21 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kiros Gan aperture monogram">
+  <defs>
+    <linearGradient id="lg" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="currentColor"/>
+      <stop offset="1" stop-color="currentColor" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+  <g stroke="currentColor" stroke-width="3" fill="none">
+    <circle cx="60" cy="60" r="44"/>
+  </g>
+  <!-- aperture blades -->
+  <g fill="url(#lg)" opacity="0.92">
+    <path d="M60 18 L86 33 L60 33 Z"/>
+    <path d="M99 41 L99 71 L78 49 Z"/>
+    <path d="M99 79 L73 94 L73 73 Z"/>
+    <path d="M60 102 L34 87 L60 87 Z"/>
+    <path d="M21 79 L21 49 L42 71 Z"/>
+    <path d="M21 41 L47 26 L47 47 Z"/>
+  </g>
+  <circle cx="60" cy="60" r="15" fill="none" stroke="currentColor" stroke-width="3"/>
+</svg>
