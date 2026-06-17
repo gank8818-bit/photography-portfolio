@@ -30,34 +30,34 @@
     "blurb": "Shot from above, the crowd becomes texture and the pavement becomes a drawing."
   },
   {
-    "file": "04-open-road.jpg",
-    "title": "Open Road",
-    "category": "Landscape",
-    "w": 1918,
-    "h": 1280,
-    "year": "2026",
-    "location": "Highland pass",
-    "blurb": "An empty highway and a single yellow line, drawn taut toward distant hills under a low, cooling sun."
+    "file": "04-geometry.jpg",
+    "title": "Geometry",
+    "category": "Architecture",
+    "w": 1500,
+    "h": 2000,
+    "year": "2025",
+    "location": "Modern museum",
+    "blurb": "Pure white volumes notch into a hard blue sky \u2014 modern architecture reduced to line and shadow."
   },
   {
-    "file": "05-still-water.jpg",
-    "title": "Still Water",
-    "category": "Landscape",
+    "file": "05-red-mirror.jpg",
+    "title": "Red Mirror",
+    "category": "Night",
     "w": 2000,
     "h": 1500,
     "year": "2026",
-    "location": "Lakeside, dusk",
-    "blurb": "Dusk settles over a glassy lake; far shore and sky fold into one quiet mirror."
+    "location": "Riverside gallery",
+    "blurb": "A red-lit facade meets its own perfect reflection \u2014 symmetry burning in the dark."
   },
   {
-    "file": "06-spires.jpg",
-    "title": "Spires",
-    "category": "Architecture",
-    "w": 1258,
+    "file": "06-pagoda.jpg",
+    "title": "Pagoda",
+    "category": "Travel",
+    "w": 1333,
     "h": 2000,
-    "year": "2026",
-    "location": "Cathedral",
-    "blurb": "Twin Gothic towers reach into clean blue \u2014 stone lacework standing against the sky."
+    "year": "2025",
+    "location": "Ancient temple",
+    "blurb": "A lone figure pauses beneath a towering timber pagoda \u2014 scale, age and stillness."
   },
   {
     "file": "07-red-umbrella.jpg",

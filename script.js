@@ -301,7 +301,7 @@
   });
 
   /* ---------------- Hero + About images ---------------- */
-  const heroPick = PHOTOS.find((p) => p.file.includes("open-road")) ||
+  const heroPick = PHOTOS.find((p) => p.file.includes("red-mirror")) ||
                    PHOTOS.find((p) => p.h < p.w) || PHOTOS[0];
   if (heroPick) $("#heroBg").style.backgroundImage = `url(${PHOTO_DIR}${heroPick.file})`;
   const aboutPick = PHOTOS.find((p) => p.file.includes("window-light")) ||
