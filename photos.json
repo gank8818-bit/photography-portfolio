@@ -1,202 +1,202 @@
 [
   {
-    "order": 1,
+    "file": "01-vertigo.jpg",
     "title": "Vertigo",
     "category": "Architecture",
-    "source": "500px",
-    "file": "01-vertigo.jpg",
     "w": 1498,
     "h": 2000,
-    "orientation": "portrait"
+    "year": "2025",
+    "location": "Downtown core",
+    "blurb": "Glass towers fold into a single vanishing point \u2014 looking straight up until the city loses its horizon."
   },
   {
-    "order": 2,
+    "file": "02-the-long-climb.jpg",
     "title": "The Long Climb",
     "category": "Urban",
-    "source": "500px",
-    "file": "02-the-long-climb.jpg",
     "w": 1213,
     "h": 2000,
-    "orientation": "portrait"
+    "year": "2025",
+    "location": "Memorial steps",
+    "blurb": "A lone figure against a relentless run of stairs. Scale, symmetry, and the patience of the climb."
   },
   {
-    "order": 3,
+    "file": "03-spiral.jpg",
     "title": "Spiral",
     "category": "Urban",
-    "source": "500px",
-    "file": "03-spiral.jpg",
     "w": 2000,
     "h": 1382,
-    "orientation": "landscape"
+    "year": "2025",
+    "location": "Public plaza",
+    "blurb": "Shot from above, the crowd becomes texture and the pavement becomes a drawing."
   },
   {
-    "order": 4,
-    "title": "Lower Falls",
+    "file": "04-open-road.jpg",
+    "title": "Open Road",
     "category": "Landscape",
-    "source": "PPPP",
-    "file": "04-lower-falls.jpg",
-    "w": 1299,
-    "h": 958,
-    "orientation": "landscape"
+    "w": 1918,
+    "h": 1280,
+    "year": "2026",
+    "location": "Highland pass",
+    "blurb": "An empty highway and a single yellow line, drawn taut toward distant hills under a low, cooling sun."
   },
   {
-    "order": 5,
-    "title": "Golden River",
+    "file": "05-still-water.jpg",
+    "title": "Still Water",
     "category": "Landscape",
-    "source": "PPPP",
-    "file": "05-golden-river.jpg",
-    "w": 1884,
-    "h": 1257,
-    "orientation": "landscape"
+    "w": 2000,
+    "h": 1500,
+    "year": "2026",
+    "location": "Lakeside, dusk",
+    "blurb": "Dusk settles over a glassy lake; far shore and sky fold into one quiet mirror."
   },
   {
-    "order": 6,
-    "title": "Prismatic",
-    "category": "Landscape",
-    "source": "PPPP",
-    "file": "06-prismatic.jpg",
-    "w": 1783,
-    "h": 1166,
-    "orientation": "landscape"
+    "file": "06-spires.jpg",
+    "title": "Spires",
+    "category": "Architecture",
+    "w": 1258,
+    "h": 2000,
+    "year": "2026",
+    "location": "Cathedral",
+    "blurb": "Twin Gothic towers reach into clean blue \u2014 stone lacework standing against the sky."
   },
   {
-    "order": 7,
-    "title": "Harbour Light",
-    "category": "Travel",
-    "source": "PPPP",
-    "file": "07-harbour-light.jpg",
-    "w": 1702,
-    "h": 1276,
-    "orientation": "landscape"
+    "file": "07-red-umbrella.jpg",
+    "title": "Red Umbrella",
+    "category": "Street",
+    "w": 1498,
+    "h": 2000,
+    "year": "2026",
+    "location": "Old town",
+    "blurb": "A single red umbrella punctuates a sunlit avenue of golden facades."
   },
   {
-    "order": 8,
+    "file": "08-framed.jpg",
     "title": "Framed",
     "category": "Creative",
-    "source": "PPPP",
-    "file": "08-framed.jpg",
     "w": 1396,
     "h": 2000,
-    "orientation": "portrait"
+    "year": "2026",
+    "location": "Hilltop ruin",
+    "blurb": "A pagoda and a distant skyline, framed by a broken wall \u2014 a window built by time."
   },
   {
-    "order": 9,
+    "file": "09-eternal.jpg",
     "title": "Eternal",
     "category": "Travel",
-    "source": "PPPP",
-    "file": "09-eternal.jpg",
     "w": 1648,
     "h": 2000,
-    "orientation": "portrait"
+    "year": "2026",
+    "location": "Rome, Italy",
+    "blurb": "The Colosseum under a heavy, moving sky. One bird, two thousand years."
   },
   {
-    "order": 10,
+    "file": "10-after-rain.jpg",
     "title": "After Rain",
     "category": "Street",
-    "source": "PPPP",
-    "file": "10-after-rain.jpg",
     "w": 1460,
     "h": 2000,
-    "orientation": "portrait"
+    "year": "2026",
+    "location": "City street",
+    "blurb": "Wet asphalt doubles the streetlights. The quiet minute right after a storm passes."
   },
   {
-    "order": 11,
+    "file": "11-red-on-the-steps.jpg",
     "title": "Red on the Steps",
     "category": "Travel",
-    "source": "PPPP",
-    "file": "11-red-on-the-steps.jpg",
     "w": 1280,
     "h": 1706,
-    "orientation": "portrait"
+    "year": "2026",
+    "location": "Rome, Italy",
+    "blurb": "A single figure in red climbs the Spanish Steps \u2014 colour as the entire composition."
   },
   {
-    "order": 12,
+    "file": "12-autumn-lamp.jpg",
     "title": "Autumn Lamp",
     "category": "Nature",
-    "source": "Pixabay",
-    "file": "12-autumn-lamp.jpg",
     "w": 1500,
     "h": 2000,
-    "orientation": "portrait"
+    "year": "2025",
+    "location": "City park",
+    "blurb": "A streetlamp stands plain against a riot of red maple \u2014 the manmade meeting the seasonal."
   },
   {
-    "order": 13,
+    "file": "13-ferris.jpg",
     "title": "Ferris",
     "category": "Night",
-    "source": "Pixabay",
-    "file": "13-ferris.jpg",
     "w": 1500,
     "h": 2000,
-    "orientation": "portrait"
+    "year": "2025",
+    "location": "Waterfront",
+    "blurb": "A wheel of cold blue light, mirrored perfectly in still water below."
   },
   {
-    "order": 14,
+    "file": "14-temple-eaves.jpg",
     "title": "Temple Eaves",
     "category": "Travel",
-    "source": "Pixabay",
-    "file": "14-temple-eaves.jpg",
     "w": 1500,
     "h": 2000,
-    "orientation": "portrait"
+    "year": "2025",
+    "location": "Temple courtyard",
+    "blurb": "Vermilion eaves and dougong brackets cut hard against a cloudless blue."
   },
   {
-    "order": 15,
+    "file": "15-ginkgo-sky.jpg",
     "title": "Ginkgo Sky",
     "category": "Nature",
-    "source": "Pixabay",
-    "file": "15-ginkgo-sky.jpg",
     "w": 1500,
     "h": 2000,
-    "orientation": "portrait"
+    "year": "2025",
+    "location": "Avenue of trees",
+    "blurb": "Golden ginkgo leaves spill into a deep blue sky \u2014 autumn at full volume."
   },
   {
-    "order": 16,
+    "file": "16-window-light.jpg",
     "title": "Window Light",
     "category": "Portrait",
-    "source": "Pixabay",
-    "file": "16-window-light.jpg",
     "w": 1500,
     "h": 2000,
-    "orientation": "portrait"
+    "year": "2026",
+    "location": "Wooden pavilion",
+    "blurb": "A quiet portrait in soft window light, framed by old timber."
   },
   {
-    "order": 17,
+    "file": "17-oculus.jpg",
     "title": "Oculus",
     "category": "Architecture",
-    "source": "Pixabay",
-    "file": "17-oculus.jpg",
     "w": 1500,
     "h": 2000,
-    "orientation": "portrait"
+    "year": "2025",
+    "location": "Timber dome",
+    "blurb": "Looking up into a woven wooden dome that radiates from a single bright eye."
   },
   {
-    "order": 18,
-    "title": "Pudong Nights",
-    "category": "Night",
-    "source": "Pixabay",
-    "file": "18-pudong-nights.jpg",
-    "w": 1500,
-    "h": 2000,
-    "orientation": "portrait"
+    "file": "18-black-swan.jpg",
+    "title": "Black Swan",
+    "category": "Nature",
+    "w": 2000,
+    "h": 1677,
+    "year": "2026",
+    "location": "Park lake",
+    "blurb": "A black swan carves a slow wake across green water \u2014 one decisive subject, nothing else."
   },
   {
-    "order": 19,
+    "file": "19-solitude.jpg",
     "title": "Solitude",
     "category": "Street",
-    "source": "Pixabay",
-    "file": "19-solitude.jpg",
     "w": 1500,
     "h": 2000,
-    "orientation": "portrait"
+    "year": "2026",
+    "location": "Tree-lined avenue",
+    "blurb": "One walker on a long, bare avenue. The leading lines do all the talking."
   },
   {
-    "order": 20,
-    "title": "Curves",
-    "category": "Architecture",
-    "source": "Pixabay",
-    "file": "20-curves.jpg",
-    "w": 1500,
+    "file": "20-pinwheel.jpg",
+    "title": "Pinwheel",
+    "category": "Creative",
+    "w": 1506,
     "h": 2000,
-    "orientation": "portrait"
+    "year": "2025",
+    "location": "Open sky",
+    "blurb": "An orange paper pinwheel held up to a vast blue, clouds drifting on behind it."
   }
 ]
