@@ -235,7 +235,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .marquee{border-block:1px solid var(--line);overflow:hidden;background:var(--bg-2)}
 .marquee__track{display:flex;gap:34px;align-items:center;padding:18px 0;white-space:nowrap;
   font-family:var(--font-display);font-size:1.5rem;font-style:italic;color:var(--text-dim);
-  width:max-content;animation:marq 600s linear infinite;will-change:transform}
+  width:max-content;animation:marq 180s linear infinite;will-change:transform}
 .marquee__track span:nth-child(even){color:var(--accent)}
 @keyframes marq{to{transform:translateX(-50%)}}
 
@@ -281,6 +281,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   display:grid;place-items:center;background:rgba(0,0,0,.45);color:#fff;font-size:1.1rem;
   backdrop-filter:blur(6px);opacity:0;transform:scale(.7);transition:.4s var(--ease)}
 .card:hover .card__expand{opacity:1;transform:scale(1)}
+/* graceful state if an image ever fails entirely: keep the caption visible */
+.card--noimg{min-height:220px}
+.card--noimg .card__overlay{opacity:1;background:linear-gradient(180deg,var(--surface),var(--surface-2))}
+.card--noimg .card__expand{display:none}
 
 /* ---------- About ---------- */
 .about{max-width:var(--maxw);margin:0 auto;padding:clamp(70px,9vw,130px) clamp(18px,4vw,52px);

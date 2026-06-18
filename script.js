@@ -205,8 +205,13 @@
     card.dataset.cat = p.category;
     card.dataset.index = idx;
     card.style.aspectRatio = `${p.w} / ${p.h}`;
+    // Load the first screenful right away; lazy-load the rest. (Lazy-loading
+    // every image can leave the top of the gallery blank on slow links.)
+    const eager = idx < 9;
     card.innerHTML = `
-      <img class="card__img" loading="lazy" src="${THUMB_DIR}${p.file}"
+      <img class="card__img" decoding="async"
+           ${eager ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'}
+           src="${THUMB_DIR}${p.file}"
            alt="${p.title} — ${p.category} photograph" width="${p.w}" height="${p.h}" />
       <div class="card__expand" aria-hidden="true">⤢</div>
       <div class="card__overlay">
@@ -214,6 +219,20 @@
         <h3 class="card__title">${p.title}</h3>
         <p class="card__loc">${p.location} · ${p.year}</p>
       </div>`;
+    // Resilient loading: if a thumbnail ever fails, fall back to the full
+    // photo; if that fails too, drop the <img> so no broken icon / alt text
+    // is shown and the card stays clean.
+    const img = card.querySelector(".card__img");
+    img.addEventListener("error", function onErr() {
+      img.removeEventListener("error", onErr);
+      if (!img.dataset.fallback) {
+        img.dataset.fallback = "1";
+        img.src = PHOTO_DIR + p.file;
+      } else {
+        img.remove();
+        card.classList.add("card--noimg");
+      }
+    });
     card.addEventListener("click", () => openLightbox(idx));
     card.setAttribute("tabindex", "0");
     card.setAttribute("role", "button");
