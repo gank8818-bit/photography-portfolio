@@ -223,9 +223,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .hero__title em{font-style:italic;color:var(--accent)}
 .hero__sub{max-width:540px;margin:30px 0 38px;color:var(--text-dim);font-size:clamp(1rem,1.4vw,1.15rem)}
 .hero__cta{display:flex;gap:16px;flex-wrap:wrap}
-.hero__scroll{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--text-dim)}
-.hero__scroll-line{width:1px;height:46px;background:linear-gradient(var(--accent),transparent);animation:scrolldot 2s var(--ease) infinite}
-@keyframes scrolldot{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 .hero__stats{position:absolute;right:clamp(18px,4vw,52px);bottom:38px;display:flex;gap:34px}
 .hero__stats div{text-align:right}
 .hero__stats strong{display:block;font-family:var(--font-display);font-size:2rem;line-height:1;color:var(--text)}
