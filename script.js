@@ -47,31 +47,10 @@
   /* ---------------- Year ---------------- */
   $("#year").textContent = new Date().getFullYear();
 
-  /* ---------------- Marquee (seamless, responsive) ----------------
-     We only ever rewrite the track's CONTENT, never its `animation`
-     property — so the continuous CSS animation (declared once in
-     styles.css) keeps running smoothly and never restarts/lurches.
-     We repeat the words until one half is wider than the viewport,
-     then duplicate that half so translateX(-50%) loops with no gap. */
-  (function buildMarquee() {
-    const track = $(".marquee__track");
-    if (!track) return;
-    const words = ["Landscape", "Architecture", "Street", "Travel", "Night", "Nature"];
-    const unit = words.map((w) => `<span>${w}</span><span>•</span>`).join("");
-    let lastW = -1;
-    function fill() {
-      const vw = window.innerWidth;
-      if (Math.abs(vw - lastW) < 60) return; // ignore tiny/no-op resizes (mobile URL bar etc.)
-      lastW = vw;
-      track.innerHTML = unit;
-      let guard = 0;
-      while (track.scrollWidth < vw + 120 && guard++ < 40) track.innerHTML += unit;
-      track.innerHTML += track.innerHTML; // two identical halves → seamless -50% loop
-    }
-    fill();
-    let rt;
-    window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(fill, 250); }, { passive: true });
-  })();
+  /* ---------------- Category band ----------------
+     The band is now a static, centred row of genres styled purely in CSS —
+     a calm accent "glow" drifts from word to word (no scrolling / spinning).
+     Nothing to build in JS; the markup in index.html is the source of truth. */
 
   /* ---------------- Nav scroll + progress ---------------- */
   const nav = $("#nav");
